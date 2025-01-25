@@ -1,0 +1,26 @@
+.cart-container {
+  text-align: center;
+  padding: 2rem;
+}
+
+.empty-cart {
+  color: #555;
+}
+
+.empty-cart button {
+  background-color: #ff7c7c;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+}
+
+.cart-items {
+  padding: 2rem;
+}
+
+.cart-item {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
