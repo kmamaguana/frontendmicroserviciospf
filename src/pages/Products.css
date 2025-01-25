@@ -1,0 +1,26 @@
+.products-container {
+    display: flex;
+  }
+  
+  .filters {
+    width: 20%;
+    padding: 1rem;
+    background-color: #f4f4f4;
+  }
+  
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+    width: 80%;
+  }
+  
+  .product-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 10px;
+  }
+  
