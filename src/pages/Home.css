@@ -1,0 +1,42 @@
+.home-container {
+    font-family: Arial, sans-serif;
+  }
+  
+  .hero-banner {
+    background: linear-gradient(to right, #ff7c7c, #ffb199);
+    color: white;
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .hero-banner h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-banner button {
+    background-color: white;
+    color: #ff7c7c;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .categories {
+    padding: 2rem;
+  }
+  
+  .category-grid {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .category-card {
+    text-align: center;
+  }
+  
+  .category-card img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
