@@ -1,0 +1,54 @@
+/* Estilos generales */
+.navbar {
+    background-color: #944328; /* Fondo oscuro para buen contraste */
+    color: white; /* Texto claro para mejor visibilidad */
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave para un toque moderno */
+  }
+  
+  .navbar .logo-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer; /* Hace que el contenedor sea clickeable */
+    text-decoration: none; /* Elimina el subrayado del Link */
+  }
+  
+  .navbar .logo {
+    width: 150px; /* Ajusta el tamaño del logo */
+    height: auto;
+    margin-right: 15px; /* Espacio entre el logo y el nombre */
+  }
+  
+  .navbar .company-name {
+    font-size: 70px;
+    font-family: 'Poppins', sans-serif; /* Tipografía moderna y estilizada */
+    color: #F1C405; /* Color dorado para resaltar el nombre */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra para darle un efecto 3D */
+    font-weight: 700;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+  }
+  
+  .nav-links li {
+    margin: 0 20px;
+  }
+  
+  .nav-links li a {
+    font-family: 'Poppins', sans-serif; /* Tipografía moderna */
+    color: #F1C405; /* Enlaces en color dorado */
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease; /* Suaviza el cambio de color */
+  }
+  
+  .nav-links li a:hover {
+    color: #EFAE0A; /* Cambio de color en hover para resaltar */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3); /* Añade sombra en hover */
+  }
+  
+  /* Estilos adicionales */
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+  
