@@ -5,8 +5,17 @@
   padding: 15px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave para un toque moderno */
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* Centra los contenidos */
   align-items: center;
+}
+
+/* Contenedor para logo, barra de búsqueda y menú */
+.navbar .navbar-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Espacia los elementos a los lados opuestos */
+  width: 100%;
+  margin: 0 auto; /* Centra el contenedor */
 }
 
 /* Logo */
@@ -24,11 +33,22 @@
 }
 
 .navbar .company-name {
-  font-size: 70px;
+  font-size: 40px;
   font-family: 'Poppins', sans-serif; /* Tipografía moderna y estilizada */
   color: #F1C405; /* Color dorado para resaltar el nombre */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra para darle un efecto 3D */
   font-weight: 700;
+}
+
+/* Barra de búsqueda */
+.navbar .search-bar {
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  width: 60%; /* Hace la barra de búsqueda más pequeña */
+  max-width: 80%; /* Limita el ancho máximo de la barra */
+  margin-left: 20px; /* Espacio entre el nombre y la barra */
 }
 
 /* Menú de navegación */
@@ -36,6 +56,8 @@
   list-style: none;
   display: flex;
   justify-content: flex-end; /* Alinea todos los elementos a la derecha */
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links li {
@@ -56,14 +78,6 @@
 }
 
 /* Barra de búsqueda */
-.search-bar {
-  padding: 8px;
-  border-radius: 5px;
-  border: none;
-  outline: none;
-  width: 1800px; /* Tamaño adecuado para la barra de búsqueda */
-}
-
 .search-bar:focus {
   border: 2px solid #EFAE0A; /* Resaltar al enfocar */
 }
