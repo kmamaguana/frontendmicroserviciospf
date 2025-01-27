@@ -1,26 +1,79 @@
+/* Products.css */
+
 .products-container {
-    display: flex;
-  }
-  
-  .filters {
-    width: 20%;
-    padding: 1rem;
-    background-color: #f4f4f4;
-  }
-  
-  .product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-    padding: 1rem;
-    width: 80%;
-  }
-  
-  .product-card {
-    background-color: white;
-    border: 1px solid #ddd;
-    padding: 1rem;
-    text-align: center;
-    border-radius: 10px;
-  }
-  
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.filters {
+  width: 20%;
+  padding: 1rem;
+  background-color: #f4f4f4; /* Fondo claro para la sección de filtros */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil para los filtros */
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+  width: 80%;
+}
+
+.product-card {
+  background-color: #fff;
+  border: 1px solid #ddd; /* Borde sutil para las tarjetas de producto */
+  padding: 1rem;
+  text-align: center;
+  border-radius: 10px; /* Bordes redondeados para las tarjetas */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave para un toque de profundidad */
+  transition: transform 0.3s, box-shadow 0.3s; /* Animación para mejorar la interacción */
+}
+
+.product-card:hover {
+  transform: translateY(-10px); /* Eleva la tarjeta al pasar el ratón */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más fuerte al hacer hover */
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px; /* Bordes redondeados para la imagen */
+  object-fit: cover; /* Asegura que la imagen no se deforme */
+}
+
+.product-card h3 {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  color: #4C6770; /* Color gris oscuro para los títulos */
+}
+
+.product-card p {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: #555; /* Gris claro para la descripción */
+}
+
+.product-card .price {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #007BFF; /* Azul para el precio */
+  margin-top: 1rem;
+}
+
+.product-card .add-to-cart {
+  background-color: #007BFF;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.product-card .add-to-cart:hover {
+  background-color: #0056b3; /* Oscurece el botón al hacer hover */
+}
