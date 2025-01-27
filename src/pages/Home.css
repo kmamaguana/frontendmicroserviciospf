@@ -1,42 +1,91 @@
+/* Home.css */
+
+body {
+  margin: 0;
+  font-family: 'Quicksand', sans-serif; /* Fuente moderna */
+  background-image: url('https://via.placeholder.com/1200x800'); /* Cambia esta URL por tu imagen de fondo */
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #4C6770; /* Color principal del texto */
+}
+
 .home-container {
-    font-family: Arial, sans-serif;
+  padding: 150px;
+  background: rgba(253, 248, 229, 0.9); /* Fondo translúcido para mejor legibilidad */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  max-width: 1200px;
+  margin: 30px auto;
+  animation: fadeIn 1s ease-in-out; /* Animación de desvanecimiento */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
   }
-  
-  .hero-banner {
-    background: linear-gradient(to right, #ff7c7c, #ffb199);
-    color: white;
-    text-align: center;
-    padding: 2rem;
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
-  
-  .hero-banner h1 {
-    font-size: 2.5rem;
-  }
-  
-  .hero-banner button {
-    background-color: white;
-    color: #ff7c7c;
-    padding: 0.8rem 1.5rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .categories {
-    padding: 2rem;
-  }
-  
-  .category-grid {
-    display: flex;
-    gap: 1.5rem;
-  }
-  
-  .category-card {
-    text-align: center;
-  }
-  
-  .category-card img {
-    width: 100%;
-    border-radius: 10px;
-  }
-  
+}
+
+.categories {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.categories h2 {
+  color: #D8AD82; /* Tono de color cálido para el título */
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra sutil para el título */
+  font-family: 'Raleway', sans-serif; /* Fuente elegante para el título */
+}
+
+.category-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.category-card {
+  background-color: #ECCFA3; /* Fondo color verde pastel */
+  border-radius: 12px; /* Bordes más redondeados */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+  width: 250px;
+  text-align: center;
+  padding: 15px;
+}
+
+.category-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  background-color: #c09a7b; /* Cambio de color al hacer hover */
+}
+
+.category-card img {
+  width: 100%;
+  height: auto;
+  border-bottom: 2px solid #D4E7EE;
+  border-radius: 8px; /* Bordes redondeados para las imágenes */
+}
+
+.category-card p {
+  margin: 10px 0 0;
+  font-size: 1.2rem;
+  color: #4C6770; /* Gris oscuro para el texto */
+  font-weight: bold;
+}
+
+/* Añadir efectos al hacer hover en los enlaces */
+.category-card:hover p {
+  color: #fff; /* Cambio de color a blanco para el texto al hacer hover */
+  transition: color 0.3s ease; /* Transición suave para el cambio de color */
+}
