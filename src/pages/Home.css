@@ -1,5 +1,4 @@
-/* Home.css */
-
+/* Estilos generales para el body */
 body {
   margin: 0;
   font-family: 'Quicksand', sans-serif; /* Fuente moderna */
@@ -11,6 +10,7 @@ body {
   color: #4C6770; /* Color principal del texto */
 }
 
+/* Contenedor principal de la página */
 .home-container {
   padding: 150px;
   background: rgba(253, 248, 229, 0.9); /* Fondo translúcido para mejor legibilidad */
@@ -21,6 +21,7 @@ body {
   animation: fadeIn 1s ease-in-out; /* Animación de desvanecimiento */
 }
 
+/* Animación de desvanecimiento */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -32,6 +33,7 @@ body {
   }
 }
 
+/* Sección de Categorías */
 .categories {
   text-align: center;
   margin-top: 20px;
@@ -45,6 +47,7 @@ body {
   font-family: 'Raleway', sans-serif; /* Fuente elegante para el título */
 }
 
+/* Estilo para la cuadrícula de categorías */
 .category-grid {
   display: flex;
   justify-content: center;
@@ -53,6 +56,7 @@ body {
   margin-top: 30px;
 }
 
+/* Estilos para cada tarjeta de categoría */
 .category-card {
   background-color: #ECCFA3; /* Fondo color verde pastel */
   border-radius: 12px; /* Bordes más redondeados */
@@ -88,4 +92,52 @@ body {
 .category-card:hover p {
   color: #fff; /* Cambio de color a blanco para el texto al hacer hover */
   transition: color 0.3s ease; /* Transición suave para el cambio de color */
+}
+
+/* Sección de lista de productos */
+.product-list {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.product-list h3 {
+  color: #D8AD82;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-family: 'Raleway', sans-serif;
+}
+
+/* Cuadrícula de productos */
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Estilo de cada tarjeta de producto */
+.product-card {
+  width: 200px;
+  background-color: #ECCFA3;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  text-align: center;
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.product-card h4 {
+  font-size: 1.2rem;
+  color: #4C6770;
+}
+
+.product-card p {
+  color: #944328;
+  font-weight: bold;
 }
