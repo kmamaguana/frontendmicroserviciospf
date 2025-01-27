@@ -1,59 +1,64 @@
 .product-detail-container {
-    padding: 2rem;
-    display: flex;
-    justify-content: center;
-    background-color: #f9f9f9;
-  }
-  
-  .product-detail {
-    display: flex;
-    gap: 2rem;
-    max-width: 1200px;
-    background: #fff;
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .product-detail-image {
-    width: 400px;
-    height: auto;
-    border-radius: 8px;
-  }
-  
-  .product-detail-info {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .product-title {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-  }
-  
-  .product-description {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-    color: #555;
-  }
-  
-  .product-price {
-    font-size: 1.5rem;
-    color: #007BFF;
-    margin-bottom: 1rem;
-  }
-  
-  .add-to-cart-button {
-    background-color: #007BFF;
-    color: #fff;
-    padding: 0.8rem 1.5rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-  }
-  
-  .add-to-cart-button:hover {
-    background-color: #0056b3;
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #FDF8E5; /* Fondo claro */
+}
+
+.product-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px;
+  border: 1px solid #944328; /* Borde de color */
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #FFF; /* Fondo blanco */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+.product-detail-image {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.product-detail-info {
+  text-align: center;
+}
+
+.product-title {
+  font-size: 24px;
+  color: #944328; /* Color principal */
+  margin-bottom: 10px;
+}
+
+.product-description {
+  font-size: 16px;
+  color: #4C6770; /* Texto gris */
+  margin-bottom: 15px;
+}
+
+.product-price {
+  font-size: 20px;
+  color: #49A55A; /* Verde para el precio */
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.add-to-cart-button {
+  background-color: #F1C405; /* Amarillo brillante */
+  color: #944328; /* Texto oscuro */
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart-button:hover {
+  background-color: #EFAE0A; /* Amarillo oscuro al pasar el mouse */
+}
