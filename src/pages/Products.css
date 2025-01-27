@@ -1,71 +1,66 @@
-/* Productos */
+/* Contenedor de productos */
 .products-container {
   display: flex;
   gap: 2rem;
   padding: 2rem;
+  box-sizing: border-box; /* Asegura el cálculo correcto del ancho */
 }
 
+/* Filtros */
 .filters {
   width: 20%;
   padding: 1rem;
-  background-color: #f4f4f4; /* Fondo claro para la sección de filtros */
+  background-color: #f4f4f4;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil para los filtros */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Cuadrícula de productos */
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
-  padding: 1rem;
-  width: 80%;
+  gap: 20px;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
+/* Tarjeta de producto */
 .product-card {
-  background-color: #fff;
-  border: 1px solid #ddd; /* Borde sutil para las tarjetas de producto */
-  padding: 1rem;
+  background-color: #ECCFA3;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 15px;
   text-align: center;
-  border-radius: 10px; /* Bordes redondeados para las tarjetas */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave para un toque de profundidad */
-  transition: transform 0.3s, box-shadow 0.3s; /* Animación para mejorar la interacción */
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .product-card:hover {
-  transform: translateY(-10px); /* Eleva la tarjeta al pasar el ratón */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más fuerte al hacer hover */
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .product-card img {
   width: 100%;
-  height: auto;
-  border-radius: 8px; /* Bordes redondeados para la imagen */
-  object-fit: cover; /* Asegura que la imagen no se deforme */
+  border-radius: 8px;
+  margin-bottom: 10px;
 }
 
-.product-card h3 {
+.product-card h4 {
   font-size: 1.2rem;
-  margin-top: 1rem;
-  color: #4C6770; /* Color gris oscuro para los títulos */
+  color: #4C6770;
 }
 
 .product-card p {
-  margin-top: 0.5rem;
-  font-size: 1rem;
-  color: #555; /* Gris claro para la descripción */
-}
-
-.product-card .price {
-  font-size: 1.3rem;
+  color: #944328;
   font-weight: bold;
-  color: #007BFF; /* Azul para el precio */
-  margin-top: 1rem;
 }
 
-/* Botón de "Add to Cart" verde */
-.product-card .add-to-cart {
-  background-color: #49A55A; /* Color verde para el fondo */
-  color: #fff; /* Color blanco para el texto */
+/* Botón de "Add to Cart" */
+.add-to-cart {
+  background-color: #49A55A;
+  color: #fff;
   padding: 0.8rem 1.5rem;
   border: none;
   border-radius: 4px;
@@ -74,7 +69,6 @@
   transition: background-color 0.2s;
 }
 
-/* Efecto hover para el botón */
-.product-card .add-to-cart:hover {
-  background-color: #3c8c4f; /* Verde más oscuro al hacer hover */
+.add-to-cart:hover {
+  background-color: #3c8c4f;
 }
