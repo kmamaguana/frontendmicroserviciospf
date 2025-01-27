@@ -15,22 +15,18 @@ const Navbar = () => {
           </h1>
         </Link>
 
-        {/* Menú de navegación y barra de búsqueda alineados a la derecha */}
+        {/* Barra de búsqueda */}
+        <input
+          type="text"
+          placeholder="Search for products..."
+          className="search-bar"
+        />
+
+        {/* Menú de navegación */}
         <ul className="nav-links">
           <li><Link to="/">Home</Link></li>
           <li><Link to="/products">Products</Link></li>
           <li><Link to="/cart">Cart</Link></li>
-
-          {/* Barra de búsqueda */}
-          <li>
-            <input
-              type="text"
-              placeholder="Search for products..."
-              className="search-bar"
-            />
-          </li>
-
-          {/* Login */}
           <li><Link to="/login">Login</Link></li>
         </ul>
       </div>
