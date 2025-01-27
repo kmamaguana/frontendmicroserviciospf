@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import Products from "./pages/Products";
 import ProductDetail from "./pages/ProductDetail";
 import Home from "./pages/Home";
+import Cart from "./pages/Cart";  // Nueva ruta para el carrito
 import "./App.css";
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/products" element={<Products />} />
               <Route path="/product/:id" element={<ProductDetail />} />
+              <Route path="/cart" element={<Cart />} /> {/* Ruta del carrito */}
             </Routes>
           </main>
         </div>
