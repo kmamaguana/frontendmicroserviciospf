@@ -139,41 +139,88 @@ function Home() {
   const [selectedCategory, setSelectedCategory] = useState("all");
 
   // Filtra los productos según la categoría seleccionada
-  const filteredProducts = selectedCategory === "all"
-    ? products
-    : products.filter(product => product.gender === selectedCategory);
+  const filteredProducts =
+    selectedCategory === "all"
+      ? products
+      : products.filter((product) =>
+          Array.isArray(selectedCategory)
+            ? selectedCategory.includes(product.gender)
+            : product.gender === selectedCategory
+        );
 
-  return (
-    <div className="home-container">
-      {/* Hero Section */}
+        return (
+          <div className="home-container">
+            {/* Hero Section */}
       
-      {/* Categories Section */}
-      <div className="categories">
-        <h2>Shop by Category</h2>
-        <div className="category-grid">
-          <div className="category-card" onClick={() => setSelectedCategory("Hombre")}>
-            <img src="https://i.pinimg.com/736x/a6/6d/c7/a66dc704795479f48641dfcff633c378.jpg" alt="Men" />
-            <p>Men</p>
-          </div>
-          <div className="category-card" onClick={() => setSelectedCategory("Mujer")}>
-            <img src="https://i.pinimg.com/736x/3a/63/e6/3a63e6e6de9a3b18239fbccc6ecd684a.jpg" alt="Women" />
-            <p>Women</p>
-          </div>
-          <div className="category-card" onClick={() => setSelectedCategory("Niño")}>
-            <img src="https://i.pinimg.com/736x/2a/66/c1/2a66c1381c225d12ac4dc2a96a91f0ff.jpg" alt="Kids" />
-            <p>Kids</p>
-          </div>
-        </div>
-      </div>
-
-      {/* Product List Section */}
-      <div className="product-list">
-        <h3>{selectedCategory === "all" ? "All Products" : `${selectedCategory} Products`}</h3>
-        <div className="product-grid">
-          {filteredProducts.map((product) => (
-            <div key={product.id} className="product-card">
-              <img src={product.img} alt={product.name} />
-              <h4>{product.name}</h4>
+            {/* Categories Section */}
+            <div className="categories">
+              <h2>Shop by Category</h2>
+              <div className="category-grid">
+                <div
+                  className="category-card"
+                  onClick={() => setSelectedCategory("Hombre")}
+                >
+                  <img
+                    src="https://i.pinimg.com/736x/a6/6d/c7/a66dc704795479f48641dfcff633c378.jpg"
+                    alt="Men"
+                  />
+                  <p>Men</p>
+                </div>
+                <div
+                  className="category-card"
+                  onClick={() => setSelectedCategory("Mujer")}
+                >
+                  <img
+                    src="https://i.pinimg.com/736x/3a/63/e6/3a63e6e6de9a3b18239fbccc6ecd684a.jpg"
+                    alt="Women"
+                  />
+                  <p>Women</p>
+                </div>
+                <div
+                  className="category-card"
+                  onClick={() => setSelectedCategory(["Niño", "Niña"])}
+                >
+                  <img
+                    src="https://i.pinimg.com/736x/2a/66/c1/2a66c1381c225d12ac4dc2a96a91f0ff.jpg"
+                    alt="Kids"
+                  />
+                  <p>Kids</p>
+                </div>
+                <div
+                  className="category-card"
+                  onClick={() => setSelectedCategory("Unisex")}
+                >
+                  <img
+                    src="https://i.pinimg.com/736x/dd/dd/17/dddd1791f4eb27460fb56ebb8844f916.jpg"
+                    alt="Unisex"
+                  />
+                  <p>Unisex</p>
+                </div>
+                <div
+                  className="category-card"
+                  onClick={() => setSelectedCategory("all")}
+                >
+                  <img
+                    src="https://i.pinimg.com/736x/84/fa/19/84fa19c92c43a84380e64816ded165ea.jpg"
+                    alt="All"
+                  />
+                  <p>All</p>
+                </div>
+              </div>
+            </div>
+      
+            {/* Product List Section */}
+            <div className="product-list">
+              <h3>
+                {selectedCategory === "all"
+                  ? "All Products"
+                  : `${Array.isArray(selectedCategory) ? "Kids" : selectedCategory} Products`}
+              </h3>
+            <div className="product-grid">
+              {filteredProducts.map((product) => (
+              <div key={product.id} className="product-card">
+                <img src={product.img} alt={product.name} />
+                <h4>{product.name}</h4>
               <p>{product.price}</p>
             </div>
           ))}
@@ -183,4 +230,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Home;      
