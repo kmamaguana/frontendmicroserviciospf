@@ -44,6 +44,12 @@
     transform: translateX(5px); /* Desplazamiento sutil */
   }
   
+  /* Active category item */
+  .category-item.active {
+    background-color: #F1C405; /* Fondo dorado para la categoría activa */
+    color: #944328; /* Texto oscuro */
+  }
+  
   /* Category icons */
   .category-icon {
     margin-right: 10px;
