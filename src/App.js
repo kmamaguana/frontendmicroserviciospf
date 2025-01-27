@@ -1,41 +1,49 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Sidebar from "./components/Sidebar";
-import Footer from "./components/Footer";
-import Products from "./pages/Products";
-import ProductDetail from "./pages/ProductDetail";
-import Home from "./pages/Home";
-import Cart from "./pages/Cart";  // Nueva ruta para el carrito
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { AuthProvider } from './config/authContext';
+import Layout from "./components/Layout";
+import ProtectedRoute from './config/protectedRoute';
+import Home from './pages/Home';  // Página principal
+import Products from './pages/Products';  // Productos
+import Cart from './pages/Cart';  // Carrito
+import Login from './auth/Login';  // Login
+import Register from './auth/Register';  // Registro
+import ForgotPassword from './auth/ForgotPassword';  // Olvido de contraseña
+import ResetPassword from './auth/ResetPassword';  // Restablecimiento de contraseña
+import AccessDenied from './auth/AccessDenied';  // Página de acceso denegado
 import "./App.css";
 
 function App() {
   return (
-    <Router>
-      <div className="app-container">
-        {/* Navbar */}
-        <Navbar />
+    <AuthProvider>
+      <Router>
+        <Routes>
+        <Route path="/login" element={<Login />} />
+          <Route path="/" element={<Layout />}>
+            {/* Rutas públicas */}
+            <Route path="/" element={<Home />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/signup" element={<Register />} />
+            <Route path="/forgot-password" element={<ForgotPassword />} />
+            <Route path="/reset-password" element={<ResetPassword />} />
+          </Route>
 
-        {/* Main Layout */}
-        <div className="main-layout">
-          {/* Sidebar */}
-          <Sidebar />
+          {/* Ruta protegida para el carrito (solo usuarios autenticados) */}
+          <Route element={<ProtectedRoute roles={['Usuario', 'Administrador']} />}>
+            <Route path="/cart" element={<Cart />} />
+          </Route>
 
-          {/* Main Content */}
-          <main className="main-content">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/products" element={<Products />} />
-              <Route path="/product/:id" element={<ProductDetail />} />
-              <Route path="/cart" element={<Cart />} /> {/* Ruta del carrito */}
-            </Routes>
-          </main>
-        </div>
+          {/* Rutas protegidas para administrador */}
+          <Route element={<ProtectedRoute roles={['Administrador']} />}>
+            <Route path="/admin" element={<Layout />} />
+            {/* Otras rutas de administración pueden ir aquí */}
+          </Route>
 
-        {/* Footer */}
-        <Footer />
-      </div>
-    </Router>
+          {/* Página de acceso denegado */}
+          <Route path="/access-denied" element={<AccessDenied />} />
+        </Routes>
+      </Router>
+    </AuthProvider>
   );
 }
 
