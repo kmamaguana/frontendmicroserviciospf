@@ -29,12 +29,14 @@ function App() {
           </Route>
 
           {/* Ruta protegida para el carrito (solo usuarios autenticados) */}
-          <Route element={<ProtectedRoute roles={['Usuario', 'Administrador']} />}>
-            <Route path="/cart" element={<Cart />} />
+          <Route element={<ProtectedRoute roles={['VENDOR', 'CUSTOMER']} />}>
+            <Route path="/" element={<Layout />}>
+              <Route path="/cart" element={<Cart />} />
+            </Route>
           </Route>
 
           {/* Rutas protegidas para administrador */}
-          <Route element={<ProtectedRoute roles={['Administrador']} />}>
+          <Route element={<ProtectedRoute roles={['CUSTOMER']} />}>
             <Route path="/admin" element={<Layout />} />
             {/* Otras rutas de administración pueden ir aquí */}
           </Route>
