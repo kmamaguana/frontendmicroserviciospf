@@ -1,93 +1,126 @@
 /* General Layout */
-.login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f4f4f9;
-  }
-  
-  .login-form {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
-    box-sizing: border-box;
-  }
-  
-  h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 28px;
-    color: #333;
-  }
-  
-  /* Form Inputs */
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  .form-group label {
-    font-size: 14px;
-    font-weight: bold;
-    color: #555;
-    margin-bottom: 5px;
-    display: block;
-  }
-  
-  .form-group input {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-sizing: border-box;
-  }
-  
-  .form-group input:focus {
-    border-color: #944328;
-    outline: none;
-  }
-  
-  .error-message {
-    color: #ff0000;
-    font-size: 14px;
-    margin-bottom: 10px;
-    text-align: center;
-  }
-  
-  /* Button */
-  .login-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #944328;
-    color: white;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .login-button:hover {
-    background-color: #7c2d19;
-  }
-  
-  /* Forgot Password Link */
-  .forgot-password {
-    text-align: center;
-    margin-top: 15px;
-  }
-  
-  .forgot-password a {
-    font-size: 14px;
-    color: #944328;
-    text-decoration: none;
-  }
-  
-  .forgot-password a:hover {
-    text-decoration: underline;
-  }
-  
+.login-page {
+  display: flex;
+  height: 100vh;
+}
+
+.left-side {
+  width: 60%;
+  background-image: url('https://i.pinimg.com/originals/53/ff/5b/53ff5be325c9976979b1a694a9081936.gif');
+  background-size: cover;
+  background-position: center;
+}
+
+.right-side {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f4f9;
+}
+
+/* Container to center the form */
+.login-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: hsla(240, 80%, 81%, 0.658);
+}
+
+.login-form {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 80%;
+}
+
+/* Emoji and Title */
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: #333;
+}
+
+.user-icon {
+  font-size: 30px;
+  margin-right: 10px;
+}
+
+/* Form Inputs */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.form-group input:focus {
+  border-color: #944328;
+  outline: none;
+}
+
+.error-message {
+  color: #ff0000;
+  font-size: 14px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Button */
+.login-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #944328;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-button:hover {
+  background-color: #7c2d19;
+}
+
+/* Forgot Password Link */
+.forgot-password {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.forgot-password a {
+  font-size: 14px;
+  color: #944328;
+  text-decoration: none;
+}
+
+.forgot-password a:hover {
+  text-decoration: underline;
+}
+
+/* Extra Styles */
+.left-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
