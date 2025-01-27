@@ -1,3 +1,15 @@
+/* Estilos generales para el body */
+body {
+  margin: 0;
+  font-family: 'Quicksand', sans-serif; /* Fuente moderna */
+  background-image: url('https://via.placeholder.com/1200x800'); /* Cambia esta URL por tu imagen de fondo */
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #4C6770; /* Color principal del texto */
+}
+
 .app-container {
   display: flex;
   flex-direction: column;
