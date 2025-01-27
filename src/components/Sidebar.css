@@ -1,0 +1,56 @@
+/* Sidebar container */
+.sidebar {
+    background-color: #BA8068; /* Fondo con tono cálido */
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    max-width: 250px;
+    font-family: 'Poppins', sans-serif; /* Tipografía estilizada */
+  }
+  
+  /* Sidebar title */
+  .sidebar-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #F1C405; /* Color dorado para destacar */
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Category list */
+  .category-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Category items */
+  .category-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  
+  .category-item:hover {
+    background-color: #944328; /* Fondo más oscuro en hover */
+    color: #F1C405; /* Texto dorado en hover */
+    transform: translateX(5px); /* Desplazamiento sutil */
+  }
+  
+  /* Category icons */
+  .category-icon {
+    margin-right: 10px;
+    font-size: 20px;
+    color: #49A55A; /* Color verde para los iconos */
+  }
+  
+  /* Import Google Fonts */
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+  
