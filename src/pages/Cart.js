@@ -2,7 +2,14 @@ import React from "react";
 import "./Cart.css";
 
 function Cart() {
-  const isEmpty = true; // Cambiar a false para probar con productos
+  const isEmpty = false; // Cambiar a true para probar el carrito vacío
+
+  // Productos en el carrito (ejemplo)
+  const cartItems = [
+    { id: 1, name: "T-Shirt", price: 19.99, image: "https://via.placeholder.com/100" },
+    { id: 2, name: "Jeans", price: 39.99, image: "https://via.placeholder.com/100" },
+    { id: 3, name: "Jacket", price: 59.99, image: "https://via.placeholder.com/100" }
+  ];
 
   return (
     <div className="cart-container">
@@ -15,12 +22,21 @@ function Cart() {
       ) : (
         <div className="cart-items">
           <h2>Your Cart</h2>
-          <div className="cart-item">
-            <img src="https://via.placeholder.com/100" alt="Product" />
-            <div>
-              <h4>Product Name</h4>
-              <p>$19.99</p>
-            </div>
+          <div className="cart-item-list">
+            {cartItems.map((item) => (
+              <div className="cart-item" key={item.id}>
+                <img src={item.image} alt={item.name} />
+                <div className="item-details">
+                  <h4>{item.name}</h4>
+                  <p>${item.price.toFixed(2)}</p>
+                </div>
+                <button className="remove-item">Remove</button>
+              </div>
+            ))}
+          </div>
+          <div className="cart-summary">
+            <h3>Total: ${cartItems.reduce((total, item) => total + item.price, 0).toFixed(2)}</h3>
+            <button className="checkout-btn">Checkout</button>
           </div>
         </div>
       )}
