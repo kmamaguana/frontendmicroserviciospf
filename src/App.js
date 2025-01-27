@@ -1,8 +1,11 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import Home from "./pages/Home";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Sidebar from "./components/Sidebar";
+import Footer from "./components/Footer";
 import Products from "./pages/Products";
-import Cart from "./pages/Cart";
+import ProductDetail from "./pages/ProductDetail";
+import Home from "./pages/Home";
 import "./App.css";
 
 function App() {
@@ -10,30 +13,25 @@ function App() {
     <Router>
       <div className="app-container">
         {/* Navbar */}
-        <nav className="navbar">
-          <div className="navbar-content">
-            <h1 className="logo">My E-Commerce</h1>
-            <ul className="nav-links">
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/products">Products</Link></li>
-              <li><Link to="/cart">Cart</Link></li>
-            </ul>
-          </div>
-        </nav>
+        <Navbar />
 
-        {/* Main Content */}
-        <main className="main-content">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/products" element={<Products />} />
-            <Route path="/cart" element={<Cart />} />
-          </Routes>
-        </main>
+        {/* Main Layout */}
+        <div className="main-layout">
+          {/* Sidebar */}
+          <Sidebar />
+
+          {/* Main Content */}
+          <main className="main-content">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/products" element={<Products />} />
+              <Route path="/product/:id" element={<ProductDetail />} />
+            </Routes>
+          </main>
+        </div>
 
         {/* Footer */}
-        <footer className="footer">
-          <p>&copy; 2025 My E-Commerce. All rights reserved.</p>
-        </footer>
+        <Footer />
       </div>
     </Router>
   );
