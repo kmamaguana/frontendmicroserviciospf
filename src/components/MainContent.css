@@ -1,0 +1,23 @@
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #fff3bc; /* Fondo cálido para las secciones principales */
+    color: #944328; /* Contraste con un tono oscuro */
+  }
+  
+  h1, h2, h3 {
+    color: #944328; /* Usamos el color oscuro para los encabezados */
+  }
+  
+  button {
+    background-color: #4f915b; /* Botones en verde vibrante */
+    color: white; /* Texto blanco en los botones para buen contraste */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  button:hover {
+    background-color: #EFAE0A; /* Hover con color cálido para destacar */
+  }
+  
