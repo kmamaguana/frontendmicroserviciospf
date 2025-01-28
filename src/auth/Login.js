@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useContext } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { AuthContext } from '../config/authContext';
 import './Login.css';
 
 const Login = () => {
@@ -7,6 +8,11 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
+  const location = useLocation(); // Obtener la ruta de origen
+  const { signIn } = useContext(AuthContext);
+
+  // Ruta de origen (si existe) o '/' como predeterminado
+  const from = location.state?.from?.pathname || '/';
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -18,7 +24,7 @@ const Login = () => {
     }
 
     try {
-      const response = await fetch('http://3.80.111.163/auth/login', {
+      const response = await fetch('http://localhost:3002/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -35,11 +41,11 @@ const Login = () => {
 
       const data = await response.json();
 
-      // Guardar el token en localStorage (o en cookies si lo prefieres)
-      localStorage.setItem('userToken', data.token);
+      // Usa signIn para guardar el token en el contexto
+      signIn(data.token);
 
-      // Navegar al carrito o a otra página de éxito
-      navigate('/cart');
+      // Redirige al usuario a la página de origen o al inicio
+      navigate(from, { replace: true });
     } catch (err) {
       setError(err.message || 'An error occurred. Please try again.');
     }
