@@ -1,12 +1,11 @@
 import React, { useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../config/authContext"; // Asegúrate de ajustar la ruta del contexto
 import "./Sidebar.css";
+import LogoutButton from "./LogoutButton";
 
 const Sidebar = () => {
   const [activeCategory, setActiveCategory] = useState(null);
-  const { userToken, signOut } = useContext(AuthContext); // Extraemos userToken y signOut del contexto
-  const navigate = useNavigate();
+  const { userToken } = useContext(AuthContext); // Extraemos userToken y signOut del contexto
 
   const categories = [
     { name: "Men", icon: "👕" },
@@ -18,10 +17,6 @@ const Sidebar = () => {
   const handleCategoryClick = (category) => {
     setActiveCategory(category);
     // Aquí puedes agregar la lógica para filtrar los productos según la categoría seleccionada
-  };
-
-  const handleLogout = () => {
-    signOut(navigate); // Llamamos al método de cerrar sesión
   };
 
   return (
@@ -41,9 +36,7 @@ const Sidebar = () => {
       </ul>
       {/* Botón de cerrar sesión: solo se muestra si existe un userToken */}
       {userToken && (
-        <button className="logout-button" onClick={handleLogout}>
-          Log Out
-        </button>
+        <LogoutButton />
       )}
     </aside>
   );
