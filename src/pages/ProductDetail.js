@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
+import { CartContext } from "../config/CartContext";
 import "./ProductDetail.css";
 
-// Datos completos de los productos
 const products = [
   { 
     id: 1, 
@@ -163,40 +163,29 @@ const products = [
 ];
 
 function ProductDetail() {
-  const { id } = useParams(); // Obtiene el ID del producto desde la URL
-  const product = products.find((item) => item.id === parseInt(id)); // Busca el producto correspondiente
+  const { id } = useParams();
+  const { addToCart } = useContext(CartContext);
+  const product = products.find((item) => item.id === parseInt(id));
 
   if (!product) {
-    return <h2>Producto no encontrado</h2>; // Mensaje si no se encuentra el producto
+    return <h2>Producto no encontrado</h2>;
   }
 
   return (
     <div className="product-detail-container">
       <div className="product-detail">
-        <img
-          src={product.img}
-          alt={product.name}
-          className="product-detail-image"
-        />
+        <img src={product.img} alt={product.name} className="product-detail-image" />
         <div className="product-detail-info">
           <h1 className="product-title">{product.name}</h1>
           <p className="product-description">{product.description}</p>
           <p className="product-price">{product.price}</p>
-          <button className="add-to-cart-button">Add to Cart</button>
+          <button
+            className="add-to-cart-button"
+            onClick={() => addToCart(product)}
+          >
+            Add to Cart
+          </button>
         </div>
-      </div>
-
-      {/* Detalles adicionales del producto */}
-      <div className="product-detail-additional">
-        <h2>Detalles del Producto</h2>
-        <ul>
-          <li><strong>Stock:</strong> {product.stock}</li>
-          <li><strong>Talla:</strong> {product.size}</li>
-          <li><strong>Color:</strong> {product.color}</li>
-          <li><strong>Género:</strong> {product.gender}</li>
-          <li><strong>Material:</strong> {product.material}</li>
-          <li><strong>Marca:</strong> {product.brand}</li>
-        </ul>
       </div>
     </div>
   );
