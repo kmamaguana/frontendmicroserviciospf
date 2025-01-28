@@ -14,10 +14,12 @@ import ResetPassword from './auth/ResetPassword';
 import AccessDenied from './auth/AccessDenied';
 import "./App.css";
 import ProductDetail from './pages/ProductDetail';
+import { CartProvider } from './config/CartContext';
 
 function App() {
   return (
     <AuthProvider>
+      <CartProvider>
       <Router>
         <Routes>
           {/* Rutas públicas no disponibles para usuarios autenticados */}
@@ -27,13 +29,13 @@ function App() {
             <Route path="/forgot-password" element={<ForgotPassword />} />
             <Route path="/reset-password" element={<ResetPassword />} />
           </Route>
-
-          <Route path="/" element={<Layout />}>
+            <Route path="/" element={<Layout />}>
             {/* Rutas públicas accesibles por todos */}
-            <Route path="/" element={<Home />} />
-            <Route path="/products" element={<Products />} />
-            <Route path="/products/:id" element={<ProductDetail />} />
-          </Route>
+              <Route path="/" element={<Home />} />
+              <Route path="/products" element={<Products />} />
+              <Route path="/products/:id" element={<ProductDetail />} />
+            </Route>
+          
 
           {/* Ruta protegida para el carrito (solo usuarios autenticados) */}
           <Route element={<ProtectedRoute roles={['VENDOR', 'CUSTOMER']} />}>
@@ -51,6 +53,7 @@ function App() {
           <Route path="/access-denied" element={<AccessDenied />} />
         </Routes>
       </Router>
+      </CartProvider>
     </AuthProvider>
   );
 }
