@@ -31,18 +31,13 @@ export const AuthProvider = ({ children }) => {
     };
 
     const signOut = (navigate) => {
-        const settings = localStorage.getItem('theme');
-        localStorage.clear();
-        if (settings) {
-            localStorage.setItem('theme', settings);
-        }
-        setUserToken(null);
-        setUserRole(null);
-        setUsername(null);
-        navigate('/');
+        setUserToken(null); // Limpiar el token en el estado
+        setUserRole(null); // Limpiar el rol del usuario
+        setUsername(null); // Limpiar el nombre de usuario
+        localStorage.removeItem('userToken'); // Eliminar el token de localStorage
+        navigate('/'); // Redirigir a la página principal
     };
-
-
+    
     useEffect(() => {
         if (!userToken) {
             setUserRole(null);
