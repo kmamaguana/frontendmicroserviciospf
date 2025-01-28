@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./Home.css";
 
-// Datos completos de los productos
 const products = [
   { 
     id: 1, 
@@ -11,7 +10,7 @@ const products = [
     stock: 10,
     size: "M",
     color: "Rojo",
-    gender: "Unisex",
+    gender: "Mujer",
     material: "Algodón",
     brand: "FashionHub",
     img: "https://i.pinimg.com/1200x/fd/c5/9b/fdc59b921dea94ef3584d9331f9c2758.jpg" 
@@ -37,7 +36,7 @@ const products = [
     stock: 15,
     size: "L",
     color: "Azul",
-    gender: "Unisex",
+    gender: "Mujer",
     material: "Algodón",
     brand: "BasicStyle",
     img: "https://i.pinimg.com/1200x/1d/26/5f/1d265f711c43784d5d3e339179c17370.jpg" 
@@ -50,7 +49,7 @@ const products = [
     stock: 20,
     size: "M",
     color: "Amarillo",
-    gender: "Unisex",
+    gender: "Mujer",
     material: "Lino",
     brand: "Summer Vibes",
     img: "https://i.pinimg.com/1200x/68/ce/d1/68ced116b4d22e2c2134f52ebce497a8.jpg" 
@@ -132,13 +131,38 @@ const products = [
     material: "Lino",
     brand: "Color Kids",
     img: "https://i.pinimg.com/736x/21/66/4d/21664d3351ffb7b2a64a332adab3214e.jpg" 
-  }
+  },
+  { 
+    id: 11, 
+    name: "Terno de Hombre", 
+    price: "$39.99", 
+    description: "Traje formal y elegante para eventos importantes.", 
+    stock: 5,
+    size: "L",
+    color: "Azul Marino",
+    gender: "Hombre",
+    material: "Sastrería",
+    brand: "Elite Wear",
+    img: "https://i.pinimg.com/1200x/29/5e/ef/295eeff4cda613d57734cee4d9baec4b.jpg" 
+  },
+  { 
+    id: 12, 
+    name: "Terno de Mujer", 
+    price: "$49.99", 
+    description: "Traje sofisticado para un look profesional.", 
+    stock: 7,
+    size: "M",
+    color: "Negro",
+    gender: "Mujer",
+    material: "Lana",
+    brand: "Sophisticated Wear",
+    img: "https://i.pinimg.com/1200x/b9/bf/a6/b9bfa667862876df265dbfc578d7ccb9.jpg" 
+  },
 ];
 
 function Home() {
   const [selectedCategory, setSelectedCategory] = useState("all");
 
-  // Filtra los productos según la categoría seleccionada
   const filteredProducts =
     selectedCategory === "all"
       ? products
