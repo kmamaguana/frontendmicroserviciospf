@@ -124,3 +124,27 @@ h2 {
   height: 100%;
   object-fit: cover;
 }
+
+/* Signup Link Section */
+.signup-link {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.signup-link p {
+  font-size: 14px;
+  color: #555;
+}
+
+.signup-link a {
+  font-size: 14px;
+  color: #944328;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.signup-link a:hover {
+  color: #7c2d19;
+  text-decoration: underline;
+}
