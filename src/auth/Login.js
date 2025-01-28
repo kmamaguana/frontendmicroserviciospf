@@ -18,8 +18,9 @@ const Login = () => {
     e.preventDefault();
     setError('');
 
-    if (username === '' || password === '') {
-      setError('Please fill in all fields');
+    // Validación de los campos vacíos
+    if (!username || !password) {
+      setError('Both fields are required.');
       return;
     }
 
@@ -30,8 +31,8 @@ const Login = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          username: username,
-          password: password,
+          username,
+          password,
         }),
       });
 
@@ -40,12 +41,8 @@ const Login = () => {
       }
 
       const data = await response.json();
-
-      // Usa signIn para guardar el token en el contexto
-      signIn(data.token);
-
-      // Redirige al usuario a la página de origen o al inicio
-      navigate(from, { replace: true });
+      signIn(data.token); // Guarda el token en el contexto
+      navigate(from, { replace: true }); // Redirige a la ruta original o al inicio
     } catch (err) {
       setError(err.message || 'An error occurred. Please try again.');
     }
@@ -95,6 +92,10 @@ const Login = () => {
 
               <div className="forgot-password">
                 <a href="/forgot-password">Forgot your password?</a>
+              </div>
+
+              <div className="signup-link">
+                <p>Don't have an account? <a href="/signup">Sign up here</a></p>
               </div>
             </form>
           </div>
