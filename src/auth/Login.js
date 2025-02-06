@@ -1,9 +1,11 @@
 import React, { useState, useContext } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { AuthContext } from '../config/authContext';
+import { LoginAPI } from '../config/urlConstext';
 import './Login.css';
 
 const Login = () => {
+  
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -25,7 +27,7 @@ const Login = () => {
     }
 
     try {
-      const response = await fetch('http://localhost:3002/auth/login', {
+      const response = await fetch(`${LoginAPI}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

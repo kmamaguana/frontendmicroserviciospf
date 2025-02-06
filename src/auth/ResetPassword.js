@@ -3,6 +3,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import './ResetPassword.css';
 
 const ResetPassword = () => {
+  const resetPasswordUrl = process.env.REACT_APP_AUTH_RESET_PASSWORD_URL
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
@@ -53,7 +54,7 @@ const ResetPassword = () => {
     }
 
     try {
-      const response = await fetch('http://localhost:3003/auth/reset-password', {
+      const response = await fetch(`${resetPasswordUrl}/auth/reset-password`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

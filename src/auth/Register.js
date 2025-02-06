@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import './Register.css';
 
 const Register = () => {
+  const registerUrl = process.env.REACT_APP_AUTH_REGISTER_URL;
   const [nombre, setNombre] = useState('');
   const [apellido, setApellido] = useState('');
   const [email, setEmail] = useState('');
@@ -23,7 +24,7 @@ const Register = () => {
     }
 
     try {
-      const response = await fetch('http://localhost:3001/auth/register', {
+      const response = await fetch(`${registerUrl}/auth/register`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
