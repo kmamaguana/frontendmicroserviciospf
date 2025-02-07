@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import './ResetPassword.css';
+import { ResetPasswordAPI } from '../config/urlConstext';
 
 const ResetPassword = () => {
-  const resetPasswordUrl = process.env.REACT_APP_AUTH_RESET_PASSWORD_URL
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
@@ -54,7 +54,7 @@ const ResetPassword = () => {
     }
 
     try {
-      const response = await fetch(`${resetPasswordUrl}/auth/reset-password`, {
+      const response = await fetch(`${ResetPasswordAPI}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

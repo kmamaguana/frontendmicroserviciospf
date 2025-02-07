@@ -1,5 +1,7 @@
-const loginUrl = process.env.REACT_APP_AUTH_LOGIN_URL;
+const URLAPI = process.env.REACT_APP_URL_API;
 
 
-export const LoginAPI = `${loginUrl}/auth/login`;
-
+export const LoginAPI = `${URLAPI}/auth/login`;
+export const RegisterAPI = `${URLAPI}/auth/register`;
+export const ForgotPasswordAPI = `${URLAPI}/auth/forgot-password`;
+export const ResetPasswordAPI = `${URLAPI}/auth/reset-password`;

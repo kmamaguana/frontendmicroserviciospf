@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Register.css';
+import { RegisterAPI } from '../config/urlConstext';
 
 const Register = () => {
-  const registerUrl = process.env.REACT_APP_AUTH_REGISTER_URL;
   const [nombre, setNombre] = useState('');
   const [apellido, setApellido] = useState('');
   const [email, setEmail] = useState('');
@@ -24,7 +24,7 @@ const Register = () => {
     }
 
     try {
-      const response = await fetch(`${registerUrl}/auth/register`, {
+      const response = await fetch(`${RegisterAPI}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

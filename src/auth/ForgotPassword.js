@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './ForgotPassword.css';
+import { ForgotPasswordAPI } from '../config/urlConstext';
 
 const ForgotPassword = () => {
-  const forgotPasswordUrl = process.env.REACT_APP_AUTH_FORGOT_PASSWORD_URL
   const [email, setEmail] = useState('');
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
@@ -20,7 +20,7 @@ const ForgotPassword = () => {
     }
 
     try {
-      const response = await fetch(`${forgotPasswordUrl}/auth/forgot-password?email=${email}`, {
+      const response = await fetch(`${ForgotPasswordAPI}?email=${email}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
